@@ -31,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
         et_phone = (EditText)findViewById(R.id.et_phone);
         et_email=(EditText)findViewById(R.id.et_email);
 
+        btn_register = (Button)findViewById(R.id.btn_register);
+        btn_login = (Button)findViewById(R.id.btn_login);
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Login.class);
+                startActivity(intent);
+            }
+        });
 
 
 }
