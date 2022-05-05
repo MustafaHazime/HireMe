@@ -44,6 +44,25 @@ public boolean Insert(String username, String password,String fullname, String c
         }
         }
 
+public Boolean CheckUsername(String username){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM user WHERE username=?", new String[]{username});
+        if(cursor.getCount() > 0){
+        return false;
+        }else{
+        return true;
+        }
+        }
+
+public Boolean CheckLogin(String username, String password) {
+    SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+    Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM user WHERE username=? AND password=?", new String[]{username, password});
+    if (cursor.getCount() > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 
