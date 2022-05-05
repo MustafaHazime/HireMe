@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class HomePage extends AppCompatActivity  {
 
     ImageButton settingsbtn;
-    EditText budget;
+    EditText budget,yearsOfExp;
     Button searchbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class HomePage extends AppCompatActivity  {
 
         budget=(EditText) findViewById(R.id.budget);
         searchbtn=(Button) findViewById(R.id.searchbtn);
+        yearsOfExp=(EditText) findViewById(R.id.yearsOfExp);
         settingsbtn= (ImageButton) findViewById(R.id.settings);
         settingsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,8 +44,14 @@ public class HomePage extends AppCompatActivity  {
             @Override
             public void onClick(View view) {
 
-                if(budget.getText().toString().isEmpty()){
+
+                if(budget.getText().toString().isEmpty() && yearsOfExp.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Required fields are missing",Toast.LENGTH_SHORT).show();
+                }
+               else if(budget.getText().toString().isEmpty()){
                     Toast.makeText(getApplicationContext(),"Please select a budget",Toast.LENGTH_SHORT).show();
+               }else if(yearsOfExp.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Please choose number of years",Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Toast.makeText(getApplicationContext(),"redirecting..",Toast.LENGTH_SHORT).show();
