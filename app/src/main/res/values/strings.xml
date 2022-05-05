@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">trial</string>
+    <string-array name="Jobs_array">
+        <item>Please select an occupation</item>
+        <item>programmer</item>
+        <item>carpenter</item>
+        <item>architect</item>
+        <item>electrician</item>
+        <item>doctor</item>
+        <item>nurse</item>
+        <item>cleaner</item>
+        <item>plumber</item>
+        <item>driver</item>
+        <item>farmer</item>
+        <item>photographer</item>
+        <item>artist</item>
+        <item>designer</item>
+        <item>painter</item>
+        <item>lifeguard</item>
+        <item>entertainer</item>
+        <item>stripper</item>
+        <item>tailor</item>
+        <item>teacher</item>
+        <item>butler</item>
+        <item>bodyguard</item>
+    </string-array>
+
+    <style name="SpinnerScrollBar" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:scrollbarThumbVertical">@color/black</item>
+    </style>
+</resources>
