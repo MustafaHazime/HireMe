@@ -88,5 +88,17 @@ public String checkEmail(String username){
         }
     }
 
+    public String checkPhone(String username){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT phone FROM user WHERE username=?", new String[]{username});
+        if (cursor.getCount() > 0) {
+            if (cursor != null)
+                cursor.moveToFirst();
+            return cursor.getString(0);
+        } else {
+            return "";
+        }
+    }
+
 
         }
