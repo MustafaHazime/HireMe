@@ -15,6 +15,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null,1);
     }
 
+@Override
+public void onCreate(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE user(ID INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT, fullname TEXT, country TEXT, phone TEXT, email TEXT)");
+        }
+
+@Override
+public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+       db.execSQL("DROP TABLE IF EXISTS user");
+        }
+
 
 
 
