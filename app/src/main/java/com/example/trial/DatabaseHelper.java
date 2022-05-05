@@ -5,6 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -62,6 +66,29 @@ public Boolean CheckLogin(String username, String password) {
     } else {
         return false;
     }
+}
+
+public ArrayList<String> getEmployees(String occupation, int budget,int years){
+
+    ArrayList<String> tempArrayList = new ArrayList<String>();
+    SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+    String query =   "SELECT name,phone from Employee WHERE occupation= \"" + occupation + "\""
+                   + " AND budget BETWEEN \"" + (int)Math.floor(budget-(budget*0.2)) +"\" AND \"" + (int)Math.ceil(budget+(budget*0.2)) +"\""
+                   + " AND years BETWEEN \""  + (int)Math.floor(years-(years*0.2)) + "\" AND \"" + (int)Math.ceil(years+(years*0.2)) + "\"";
+    Log.d("DEBUGGGG",query);
+    Cursor cursor = sqLiteDatabase.rawQuery(query,null);
+    if (cursor.getCount() > 0) {
+        if (cursor != null)
+            cursor.moveToFirst();
+        while (cursor.moveToNext()) {
+            String temp = new String();
+            temp += cursor.getString(0);
+            temp+="\n";
+            temp+= cursor.getString(1);
+            tempArrayList.add(temp);
+        }
+    }
+    return tempArrayList;
 }
 
 public String checkEmail(String username){
