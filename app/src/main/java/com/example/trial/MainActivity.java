@@ -74,7 +74,12 @@ public class MainActivity extends AppCompatActivity {
                                 et_phone.setText("");
                                 et_email.setText("");
                             }
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Username already taken", Toast.LENGTH_SHORT).show();
                         }
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Password does not match", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
