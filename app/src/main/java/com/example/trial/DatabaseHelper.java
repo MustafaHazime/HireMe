@@ -26,6 +26,24 @@ public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
        db.execSQL("DROP TABLE IF EXISTS user");
         }
 
+public boolean Insert(String username, String password,String fullname, String country, String phone, String email){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("username", username);
+        contentValues.put("password", password);
+        contentValues.put("fullname", fullname);
+        contentValues.put("country", country);
+        contentValues.put("phone", phone);
+        contentValues.put("email", email);
+
+        long result = sqLiteDatabase.insert("user", null, contentValues);
+        if(result == -1){
+        return false;
+        }else{
+        return true;
+        }
+        }
+
 
 
 
