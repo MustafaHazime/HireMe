@@ -53,7 +53,18 @@ public class MainActivity extends AppCompatActivity {
                 String phone=et_phone.getText().toString();
                 String email=et_email.getText().toString();
 
+                if(username.equals("") || password.equals("") || confirm_password.equals("") || fullname.equals("") || country.equals("") || phone.equals("") || email.equals("")){
+                    Toast.makeText(getApplicationContext(), "Fields Required", Toast.LENGTH_SHORT).show();
+                }else{
+                    if(password.equals(confirm_password)){
+                        Boolean checkusername = databaseHelper.CheckUsername(username);
+                        String checkemail=databaseHelper.checkEmail(email);
+                        String checkcountry=databaseHelper.checkCountry(country);
+                        String checkphone=databaseHelper.checkPhone(phone);
+                        String checkfullname=databaseHelper.checkFullName(fullname);
 
+                }
+            }
         });
     }
 }
