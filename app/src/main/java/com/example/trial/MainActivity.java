@@ -42,5 +42,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username = et_username.getText().toString();
+                String password = et_password.getText().toString();
+                String confirm_password = et_cpassword.getText().toString();
+                String fullname=et_fullname.getText().toString();
+                String country=et_country.getText().toString();
+                String phone=et_phone.getText().toString();
+                String email=et_email.getText().toString();
 
+
+        });
+    }
 }
