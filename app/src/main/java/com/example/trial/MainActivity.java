@@ -17,6 +17,20 @@ public class MainActivity extends AppCompatActivity {
     Button btn_register, btn_login;
     //String username;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        databaseHelper = new DatabaseHelper(this);
+        et_username = (EditText)findViewById(R.id.et_username);
+        et_password = (EditText)findViewById(R.id.et_password);
+        et_cpassword = (EditText)findViewById(R.id.et_cpassword);
+        et_fullname = (EditText)findViewById(R.id.et_fullname);
+        et_country = (EditText)findViewById(R.id.et_country);
+        et_phone = (EditText)findViewById(R.id.et_phone);
+        et_email=(EditText)findViewById(R.id.et_email);
+
 
 
 }
