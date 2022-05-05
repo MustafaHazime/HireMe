@@ -62,7 +62,19 @@ public class MainActivity extends AppCompatActivity {
                         String checkcountry=databaseHelper.checkCountry(country);
                         String checkphone=databaseHelper.checkPhone(phone);
                         String checkfullname=databaseHelper.checkFullName(fullname);
-
+                        if(checkusername == true){
+                            Boolean insert = databaseHelper.Insert(username, password,fullname,country,phone,email);
+                            if(insert == true){
+                                Toast.makeText(getApplicationContext(), "Registered", Toast.LENGTH_SHORT).show();
+                                et_username.setText("");
+                                et_password.setText("");
+                                et_cpassword.setText("");
+                                et_fullname.setText("");
+                                et_country.setText("");
+                                et_phone.setText("");
+                                et_email.setText("");
+                            }
+                        }
                 }
             }
         });
