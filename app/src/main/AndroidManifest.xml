@@ -11,16 +11,20 @@
         android:theme="@style/Theme.Trial">
         <activity
             android:name=".redirectory"
+            android:label="@string/Employees"
             android:exported="false" />
         <activity
             android:name=".profile"
+            android:label="@string/Profile"
             android:exported="false" />
         <activity
             android:name=".HomePage"
+            android:label="@string/HomePage"
             android:exported="false" />
         <activity
             android:name=".Login"
             android:configChanges="orientation"
+            android:label="@string/Login"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -33,7 +37,7 @@
             android:name=".MainActivity"
             android:configChanges="orientation"
             android:exported="true"
-            android:label="@string/app_name"
+            android:label="@string/SignUp"
             android:theme="@style/Theme.Trial">
             <intent-filter>
                 <action android:name="com.razormist.simpleregistrationandloginapplication.Login" />
